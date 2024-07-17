@@ -18,7 +18,7 @@ export const AuctionBody = () => {
 
       {stateLogout ? (
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border mt-1 ">
-          {items.map((doc, i) => {
+          {items.filter(el => el.sucursal === 'San Carlos').map((doc, i) => {
             return <AuctionCard item={doc} key={i} />;
           })}
         </div>
