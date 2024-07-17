@@ -98,7 +98,7 @@ const resizeFile = (file) =>
       stockSanCarlos: Number(stockSanCarlos.current.value),
 
       talla: talla.current.value,
-
+      sucursal: 'San Carlos',
       description: description.current.value,
     };
 
