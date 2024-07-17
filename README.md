@@ -9,5 +9,6 @@ Currently, two official plugins are available:
 # inventario-Polanco
 # inventarioPolanco
 
+https://xiperafa.github.io/inventarioSanCarlos/
 
- https://xiperafa.github.io/inventarioPolanco/# inventarioSanCarlos
+# inventarioSanCarlos
