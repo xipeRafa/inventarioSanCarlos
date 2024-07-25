@@ -20,6 +20,18 @@ export const AuctionCard = ({ item }) => {
 
   const { deleteById, setToggle, toggle } = useContext(FireStoreDataContext);
 
+
+
+
+  function QrFunction(){
+      let typeNumber = 4;
+      let errorCorrectionLevel = 'L';
+      let qr = qrcode(typeNumber, errorCorrectionLevel);
+      qr.addData(`https://xiperafa.github.io/polancoEcommerc/item/${item.id}`);
+      qr.make();
+      return <div dangerouslySetInnerHTML={{ __html: qr.createImgTag() }} />
+}
+
   return (
     <div className="card shadow-sm ">
       <div
@@ -59,7 +71,7 @@ export const AuctionCard = ({ item }) => {
 
         <div className='btnBorrarInforme'> 
           <button
-            className="btn btn-danger"
+            className="btn btn-danger mb-2 mt-2"
             onClick={() => {
               if (window.confirm(`Quiere Borrar este Documento? ${item.name}`)) {
                   deleteById(item.id, item.imgName);
@@ -69,6 +81,10 @@ export const AuctionCard = ({ item }) => {
         >
           Borrar
         </button>
+
+
+          <QrFunction />
+         <button className="btn btn-dark btn-sm mt-1">IMPRIMIR QR</button>
         </div>
       </div>
     </div>
