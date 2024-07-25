@@ -58,7 +58,6 @@ export const AuctionCard = ({ item }) => {
 
         <p> marca: <span>{item.marca}</span></p>
         <p> talla: <span>{item.talla}</span></p>
-        <p> color: <span>{item.color}</span></p>
         <p> tela: <span>{item.tela}</span></p>
         <p> Stock San Carlos: <span>{item.stockSanCarlos}</span></p>
         <hr />
