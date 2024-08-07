@@ -25,10 +25,10 @@ const resizeFile = (file) =>
   new Promise((resolve) => {
     Resizer.imageFileResizer(
       file,
-      300,
-      300,
+      600,
+      600,
       "JPEG",
-      80,
+      120,
       0,
       (uri) => {resolve(uri);},"base64");
   });
@@ -154,7 +154,7 @@ const resizeFile = (file) =>
             </Row>
             <Row>
               <Col className="mb-2">
-                <Form.Label>para</Form.Label>
+                <Form.Label>Para</Form.Label>
                 <Form.Control as="select" multiple={false} ref={para}>
                   <option value="hombre">Hombre</option>
                   <option value="mujer">Mujer</option>
@@ -173,15 +173,15 @@ const resizeFile = (file) =>
             </Row>
             <Row>
               <Col>
-                <Form.Label>talla</Form.Label>
-                <Form.Control type="text" required ref={talla} />
+                <Form.Label>Talla</Form.Label>
+                <Form.Control type="number" required max='99' min='0' ref={talla} />
               </Col>
             </Row>
             <hr />
             <Row>
               <Col>
                 <Form.Group>
-                  <Form.Label>marca</Form.Label>
+                  <Form.Label>Marca</Form.Label>
                   <Form.Control type="text" required ref={marca} />
                 </Form.Group>
               </Col>
@@ -190,7 +190,7 @@ const resizeFile = (file) =>
             <Row>
               <Col>
                 <Form.Group>
-                  <Form.Label>precio</Form.Label>
+                  <Form.Label>Precio</Form.Label>
                   <Form.Control type="number" required ref={precio} />
                 </Form.Group>
               </Col>
@@ -199,7 +199,7 @@ const resizeFile = (file) =>
             
             <Row>
               <Col className="mb-2">
-                <Form.Label>tela</Form.Label>
+                <Form.Label>Tela</Form.Label>
                 <Form.Control as="select" multiple={false} ref={tela}>
                   <option value="algodon">algodon</option>
                   <option value="lino">lino</option>
