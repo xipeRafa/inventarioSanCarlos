@@ -50,24 +50,36 @@ export const AuctionCard = ({ item }) => {
         {/*<p>Creado: {  new Date(item.duration).toLocaleDateString("es-ES", {year: 'numeric', month: 'long', day: 'numeric'})}</p>*/}
         <p> {milisegundosComoFecha(item.duration)}  </p>
         <hr />
+        {/*{item.id}*/}
         <p>Nombre: <span>{item.name}</span></p>
         <p>para: <span>{item.para}</span></p>
         <p> categoria: <span>{item.category}</span></p>
-        <p> precio: <span>{item.price}</span></p>
+        
         <hr />
 
         <p> marca: <span>{item.marca}</span></p>
-        <p> talla: <span>{item.talla}</span></p>
+       
         <p> tela: <span>{item.tela}</span></p>
-        <p> Stock San Carlos: <span>{item.stockSanCarlos}</span></p>
-        <hr />
+        
 
-        <p> Descripcion <span>{item.description}</span></p>
+        <p> Descripción <span>{item.description}</span></p>
 
 
         <hr/>
 
+        <p> Stock San Carlos: <span>{item.stockSanCarlos}</span></p>
+        <p> Precio: <span>{item.price} $ </span></p>
+        <p> Tallas: </p>
+         {item?.talla?.map((el,i)=>(
+                          <b key={i}><span>{el }, </span></b>
+          ))}
 
+
+
+
+        <hr/> 
+
+        
         <div className='btnBorrarInforme'> 
           <button
             className="btn btn-danger mb-2 mt-2"
