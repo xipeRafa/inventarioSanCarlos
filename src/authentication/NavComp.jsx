@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import logoImg from '../assets/canal10.png';
+// import logoImg from '../assets/canal10.png';
 
 import { LoginComp } from './LoginComp';
 import { RegisterComp } from './RegisterComp';
@@ -13,7 +13,8 @@ export const NavComp = () => {
     <nav className="container navbar navbar-light">
       <div className="w-100 d-flex justify-content-center">
         <div className="navbar-brand mb-4">
-          <img src={logoImg} alt="logo" height="140" />
+          {/*<img src={logoImg} alt="logo" height="140" />*/}
+          <h3 style={{fontStyle:'oblique',fontFamily: 'serif',}}>Polanco Guayaberas</h3>
         </div>
       </div>
 
@@ -22,7 +23,7 @@ export const NavComp = () => {
           {localStorage.getItem('userEmailLS') !== null ? (
             <>
               <div className="btn btn-secondary mx-2 disabled">
-                    <b>SAN CARLOS</b>
+                    <b>INVENTARIO SAN CARLOS</b>
               </div>
               <div
                 onClick={() => {if (window.confirm(`Quieres Salir?`)) {
