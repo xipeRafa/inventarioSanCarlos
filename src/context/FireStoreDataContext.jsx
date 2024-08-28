@@ -31,7 +31,9 @@ const FireStoreDataProvider = (props) => {
     where('email', '==', localStorage.getItem('userEmailLS'))
   );
 
-  const postCollection = collection(firestoreDB, 'inventario');
+
+const relojCollection = collection(firestoreDB, 'reloj')
+ const [reloj, setReloj] = useState();
 
   const [toggle, setToggle] = useState(true);
 
@@ -55,10 +57,65 @@ const FireStoreDataProvider = (props) => {
         console.log('Error searching items', err);
       });
 
+
+
+
+
+
+      getDocs(relojCollection)
+      .then((querySnapshot) => {
+        if (querySnapshot.size === 0) {
+          console.log('No results Reloj!');
+        }
+
+        const documents = querySnapshot.docs.map((doc) =>(
+          {...doc.data() }
+        ))
+
+        setReloj(documents[0].reloj);
+      })
+      .catch((err) => {
+        console.log('Error searching items', err);
+      });
+
+
+
+
     isMounted = false;
   }, [toggle]);
 
   //============================= images functions ===========================//
+
+  //localStorage.setItem('reloj', '1723705200000')
+
+  
+
+console.log('relojFirebase', reloj)
+
+
+
+ const postCollection = collection(firestoreDB, 'inventario');
+  
+  
+
+
+  let a = Date.now() 
+  let b = JSON.parse(localStorage.reloj) // 15 de Agosto
+console.log(b)
+
+  if(a >= b && a <= b + 86400000){
+      let c = b + 86400000
+      console.log('hoy:', a , 'manana:', c) //1723791600000 16 de Agosto
+  }else{
+    
+      let c = b + 86400000
+      localStorage.setItem('reloj', c) 
+
+      let d = reloj + 86400000 
+      //addDoc(relojColection, {'reloj': d});
+      console.log('new update')
+  }
+
 
   const handleFileAdd = (selectedFile, postBody) => {
     const filesFolderRef = ref(

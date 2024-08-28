@@ -55,7 +55,7 @@ const resizeFile = (file) =>
 
 
   const handleTallaState=(e)=>{
-      let str = e.target.value
+      let str = e.target.value.toLowerCase()
       let arr = str.split(',')
       setTallaState(arr)
   }

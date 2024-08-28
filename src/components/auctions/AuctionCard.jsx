@@ -50,7 +50,7 @@ export const AuctionCard = ({ item }) => {
         {/*<p>Creado: {  new Date(item.duration).toLocaleDateString("es-ES", {year: 'numeric', month: 'long', day: 'numeric'})}</p>*/}
         <p> {milisegundosComoFecha(item.duration)}  </p>
         <hr />
-        {/*{item.id}*/}
+        {item.id}
         <p>Nombre: <span>{item.name}</span></p>
         <p>para: <span>{item.para}</span></p>
         <p> categoria: <span>{item.category}</span></p>
