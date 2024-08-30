@@ -28,7 +28,8 @@ const FireStoreDataProvider = (props) => {
 
   const itemCollection = query(
     collection(firestoreDB, 'inventario'),
-    where('email', '==', localStorage.getItem('userEmailLS'))
+    where('email', '==', localStorage.getItem('userEmailLS')),
+    where('sucursal', '==', 'San Carlos')
   );
 
 
@@ -90,31 +91,31 @@ const relojCollection = collection(firestoreDB, 'reloj')
 
   
 
-console.log('relojFirebase', reloj)
+// console.log('relojFirebase', reloj)
 
 
 
- const postCollection = collection(firestoreDB, 'inventario');
+  const postCollection = collection(firestoreDB, 'inventario');
   
   
 
 
-  let a = Date.now() 
-  let b = JSON.parse(localStorage.reloj) // 15 de Agosto
-console.log(b)
+//   let a = Date.now() 
+//   let b = JSON.parse(localStorage.reloj) // 15 de Agosto
+// console.log(b)
 
-  if(a >= b && a <= b + 86400000){
-      let c = b + 86400000
-      console.log('hoy:', a , 'manana:', c) //1723791600000 16 de Agosto
-  }else{
+//   if(a >= b && a <= b + 86400000){
+//       let c = b + 86400000
+//       console.log('hoy:', a , 'manana:', c) //1723791600000 16 de Agosto
+//   }else{
     
-      let c = b + 86400000
-      localStorage.setItem('reloj', c) 
+//       let c = b + 86400000
+//       localStorage.setItem('reloj', c) 
 
-      let d = reloj + 86400000 
-      //addDoc(relojColection, {'reloj': d});
-      console.log('new update')
-  }
+//       let d = reloj + 86400000 
+//       //addDoc(relojColection, {'reloj': d});
+//       console.log('new update')
+//   }
 
 
   const handleFileAdd = (selectedFile, postBody) => {
