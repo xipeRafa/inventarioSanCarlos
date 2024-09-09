@@ -63,21 +63,21 @@ const relojCollection = collection(firestoreDB, 'reloj')
 
 
 
-      getDocs(relojCollection)
-      .then((querySnapshot) => {
-        if (querySnapshot.size === 0) {
-          console.log('No results Reloj!');
-        }
+      // getDocs(relojCollection)
+      // .then((querySnapshot) => {
+      //   if (querySnapshot.size === 0) {
+      //     console.log('No results Reloj!');
+      //   }
 
-        const documents = querySnapshot.docs.map((doc) =>(
-          {...doc.data() }
-        ))
+      //   const documents = querySnapshot.docs.map((doc) =>(
+      //     {...doc.data() }
+      //   ))
 
-        setReloj(documents[0].reloj);
-      })
-      .catch((err) => {
-        console.log('Error searching items', err);
-      });
+      //   setReloj(documents[0].reloj);
+      // })
+      // .catch((err) => {
+      //   console.log('Error searching items', err);
+      // });
 
 
 

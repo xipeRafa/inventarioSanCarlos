@@ -9,4 +9,40 @@ input[type=text]{
 
 body{
   background-color: rgba(0, 68, 255, 0.137)!important;
+  overflow-x: hidden;
+}
+
+
+.sliceAlert{
+  color: rgba(222, 0, 0, .8);
+}
+
+
+.d-none{
+  display: none;
+}
+
+
+
+.button{
+    padding: 6px;
+    border-radius: 6px;
+    border:none;
+    margin-right: 4px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.08) 0px 0px 0px 1px;
+    background-image: linear-gradient(#fff, #c0cefa);
+    color: var(--bs-gray-700);
+    min-height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.sliceButtons{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sliceButtonsP{
+  margin: 10px!important;
 }
